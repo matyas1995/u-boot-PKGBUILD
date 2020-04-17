@@ -1,5 +1,6 @@
 # U-Boot: RockPro64
 # Maintainer: Matyas Mehn <matyas.mehn@tum.de>
+# Based on PKGBUILD for uboot-rock64
 
 buildarch=8
 
@@ -27,15 +28,13 @@ md5sums=('b6b2e0787b6874e6b57da0a065a84f5a'
          '021623a04afd29ac3f368977140cfbfd')
 
 build() {
-#  unset CFLAGS CXXFLAGS CPPFLAGS LDFLAGS
-
   cd u-boot-${pkgver/rc/-rc}
   make distclean
   cd ../
 
   cd arm-trusted-firmware
   make distclean
-  make CROSS_COMPILE=aarch64-unknown-linux-gnu- PLAT=rk3399 bl31
+  make PLAT=rk3399 bl31
 
   cd ../
   cp arm-trusted-firmware/build/rk3399/release/bl31/bl31.elf u-boot-${pkgver/rc/-rc}/
@@ -44,7 +43,7 @@ build() {
 
   make rockpro64-rk3399_defconfig
   echo 'CONFIG_IDENT_STRING=" Arch Linux ARM"' >> .config
-  make CROSS_COMPILE=aarch64-unknown-linux-gnu- EXTRAVERSION=-${pkgrel}
+  make EXTRAVERSION=-${pkgrel}
 }
 
 package() {

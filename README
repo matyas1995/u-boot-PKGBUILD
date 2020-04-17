@@ -1,0 +1,6 @@
+U-Boot PKGBUILD for RockPro64
+
+utilizes u-boot mainline according to the Rockchip bootflow with u-boot as TPL/SPL and ARM Trusted Firmware compiled from source instead of the rockchip idbLoader.
+
+This PKGBUILD is intended to be built directly on the RockPro, but can be cross compiled as well, both methods have been tried and proved working.
+
