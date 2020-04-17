@@ -6,7 +6,7 @@ buildarch=8
 
 pkgname=uboot-rockpro64
 pkgver=2020.01
-pkgrel=2
+pkgrel=1
 pkgdesc="U-Boot for RockPro64"
 arch=('aarch64')
 url='http://www.denx.de/wiki/U-Boot/WebHome'
