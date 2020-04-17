@@ -12,8 +12,7 @@ arch=('aarch64')
 url='http://www.denx.de/wiki/U-Boot/WebHome'
 license=('GPL')
 backup=('boot/boot.txt' 'boot/boot.scr')
-#makedepends=('bc' 'git' 'arm-none-eabi-gcc')
-makedepends=('bc' 'git')
+makedepends=('bc' 'git' 'arm-none-eabi-gcc' 'arm-none-eabi-newlib')
 options=(!buildflags
          !makeflags
          !debug)
